@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+#define nl endl
+using namespace std;
+int main() {
+    // rows are fixed but columns are dynamic,
+    int m=3,n=2;
+    vector<int> arr[m];
+
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            arr[i].push_back(10);
+        }
+    }
+
+    for(int i = 0; i < m; i++){
+	    for(int j = 0; j < n; j++){
+		cout << arr[i][j] << " ";
+	}}
+return 0;
+}
