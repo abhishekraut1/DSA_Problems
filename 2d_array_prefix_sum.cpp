@@ -6,7 +6,7 @@ int main() {
     cin>>n>>m;
     int arr[n][m];
     int ps[n][m];
-
+ 
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
             cin>>arr[i][j];
@@ -29,7 +29,8 @@ int main() {
     }
     cout<<endl;
     for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
+        for(int j=0;j<m;j++)
+        {
             cout<<ps[i][j]<<" ";
         }
         cout<<endl;
