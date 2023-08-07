@@ -17,7 +17,7 @@ struct Node{
     }
 };
 // TC = O(n), n = count of all nodes including root node;
-// SC = O(h) where h is the height of the tree. 
+// SC = O(h) where h is the height of the tree.
 
 // 6) Level Order Traversal OR BSF
 // TC = theta(n)
@@ -39,6 +39,38 @@ void levelOrderTraversal(Node *root){
 
         if(curr->right != NULL)
         q.push(curr->right);
+    }
+}
+// Print all levels of binary tree
+void printLevelOrder(Node* root)
+{
+    // Base Case
+    if (root == NULL)
+        return;
+ 
+    // Create an empty queue for level order traversal
+    queue<Node*> q;
+ 
+    // Enqueue Root and initialize height
+    q.push(root);
+ 
+    while (q.empty() == false) {
+        // nodeCount (queue size) indicates number
+        // of nodes at current level.
+        int nodeCount = q.size();
+ 
+        // Dequeue all nodes of current level and
+        // Enqueue all nodes of next level
+        for(int i=0;i<nodeCount;i++){
+            Node* node = q.front();
+            cout << node->data << " ";
+            q.pop();
+            if (node->left != NULL)
+                q.push(node->left);
+            if (node->right != NULL)
+                q.push(node->right);
+        }
+        cout << endl;
     }
 }
 
