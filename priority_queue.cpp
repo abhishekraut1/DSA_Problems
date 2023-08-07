@@ -21,7 +21,7 @@ int main() {
     // }
 
     //(2) smallest element is always at top
-    // priority_queue<int,vector<int>,greater<int>>pq2;
+    // priority_<int,vector<int>,greater<int>>pq2;
     // pq2.push(20);
     // pq2.push(23);
     // pq2.push(10);
