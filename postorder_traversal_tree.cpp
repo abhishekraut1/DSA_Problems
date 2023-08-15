@@ -21,7 +21,7 @@ struct Node{
 
 // DFS Traversal
 // 3) Postorder Traversal
-void postorderRec(Node *root){
+void postorderRec(Node *root){ 
     if(root == NULL)
         return;
     postorderRec(root->left);

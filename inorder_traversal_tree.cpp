@@ -33,7 +33,7 @@ void inorderIter(Node *root){
     stack<Node*>st;
     Node* curr = root;
 
-    while(true){
+    while(true){ 
         if(curr!=NULL){
             st.push(curr);
             curr = curr->left;

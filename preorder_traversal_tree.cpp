@@ -39,8 +39,7 @@ void preorderIter(Node *root){
   while(!st.empty()){
       Node *curr = st.top();
       st.pop();
-      
-      
+            
       cout<<curr->data<<" ";
       if(curr->right) st.push(curr->right);
       if(curr->left) st.push(curr->left);

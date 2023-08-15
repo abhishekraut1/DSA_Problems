@@ -19,14 +19,15 @@ using namespace std;
     int maxSumSubarray2(vector<int>&arr){
         int max_ending_here=0;
         int max_so_far=0;
-        int s=0,e=0;
+        int s=0,start=0,end=0;
         for(int i=0;i<arr.size();i++){
             // either extend the previous max_ending_here or start new one
             max_ending_here = max_ending_here+arr[i];
 
             if(max_so_far < max_ending_here){
                 max_so_far = max_ending_here;
-                e=i;
+                start=s;
+                end=i;
             }
            
            if(max_ending_here < 0){
@@ -34,7 +35,7 @@ using namespace std;
                 s = i+1;
            }
         }
-        cout<<s<<" "<<e<<endl;
+        cout<<start<<" "<<end<<endl;
     return max_so_far;
     }
 int main() {
