@@ -16,7 +16,7 @@ struct Node{
         right = left = NULL;
     }
 };
-// 4) Height of Binary Tree
+// 4) Height of Binary Tree OR Maximum Depth in a binary tree
 int height(Node *root){
     if(root == NULL)
         return 0;

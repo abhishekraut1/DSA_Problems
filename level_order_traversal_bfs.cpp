@@ -8,7 +8,7 @@ using namespace std;
 
 struct Node{
     Node *right;
-    Node *left; 
+    Node *left;  
     int data;
 
     Node(int key){
@@ -16,8 +16,6 @@ struct Node{
         right = left = NULL;
     }
 };
-// TC = O(n), n = count of all nodes including root node;
-// SC = O(h) where h is the height of the tree.
 
 // 6) Level Order Traversal OR BSF
 // TC = theta(n)
