@@ -22,16 +22,16 @@ struct Node{
 };
 
 // TC = O(n)
-bool helper(Node *node,int x,vector<int> &ans){
-    if(node==NULL)
+bool helper(Node *root,int x,vector<int> &ans){
+    if(root==NULL)
         return false;
 
-    ans.push_back(node->data);
+    ans.push_back(root->data);
 
-    if(node->data == x)
+    if(root->data == x)
         return true;
 
-    if(helper(node->left,x,ans) || helper(node->right,x,ans))
+    if(helper(root->left,x,ans) || helper(root->right,x,ans))
         return true;
     
     ans.pop_back();

@@ -41,6 +41,16 @@ void printKthNode(Node *root,int k){
     printKthNode(root->right,k-1);
 }
 
+// Search node in a binary tree
+bool search(Node* root, int x) {
+    if(root==NULL)
+        return false;
+    if(root->data == x)
+        return true;
+        
+    return search(root->left,x) || search(root->right,x);
+}
+
 
 
 int main() {

@@ -26,13 +26,13 @@ vector <int> bottomView(Node *root) {
         auto curr = q.front();
         q.pop();
         Node *node = curr.first;
-        int level = curr.second;
-        mp[level] = node->data;
+        int column = curr.second;
+        mp[column] = node->data;
         if(node->left){
-            q.push({node->left,level-1});
+            q.push({node->left,column-1});
         }
         if(node->right){
-            q.push({node->right,level+1});
+            q.push({node->right,column+1});
         }
     }
     vector<int>ans;
