@@ -32,15 +32,10 @@ Node* searchBST2(Node* root, int val) {
     if(root==NULL || root->data==val)
         return root;
 
-    Node *left=NULL,*right=NULL;
-    if(val < root->data){
-        left = searchBST(root->left,val);
-    }else{
-        left = searchBST(root->right,val);
-    }
-
-    if(left) return left;
-    else return right;
+    if(val < root->data)
+        return searchBST(root->left,val);
+    else
+        return searchBST(root->right,val);
 }
 
 int main() {
@@ -50,17 +45,19 @@ int main() {
     root->left->left = new Node(1);
     root->left->right = new Node(3);
     
-    Node *res = searchBST(root,2);
+    Node *res = searchBST(root,3);
 
     if(res)
-    cout<<res->left->data<<" "<<res->data<<" "<<res->right->data<<endl;
+    // cout<<res->left->data<<" "<<res->data<<" "<<res->right->data<<endl;
+    cout<<res->data<<endl;
     else
     cout<<res<<endl;
 
-    res = searchBST2(root,2);
+    res = searchBST2(root,7);
 
     if(res)
-    cout<<res->left->data<<" "<<res->data<<" "<<res->right->data<<endl;
+    // cout<<res->left->data<<" "<<res->data<<" "<<res->right->data<<endl;
+    cout<<res->data<<endl;
     else
     cout<<res<<endl;
    

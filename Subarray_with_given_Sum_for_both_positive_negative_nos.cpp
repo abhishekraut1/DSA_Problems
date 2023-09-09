@@ -17,6 +17,8 @@ bool solve1(int arr[],int n,int sum){
         if(h.find(prefix_sum - sum) != h.end()){
             return true;
         }
+
+        h.insert(prefix_sum);
     }
 
     return false;
