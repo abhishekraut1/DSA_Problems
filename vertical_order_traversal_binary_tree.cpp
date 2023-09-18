@@ -16,32 +16,39 @@ struct Node{
         right = left = NULL;
     }
 };
-
-// TC = O(n)
-vector <int> bottomView(Node *root) {
-    queue<pair<Node*,int>>q;
-    q.push({root,0});
-    map<int,int>mp;
+vector<int> verticalOrder(Node *root)
+{
+    map<int,map<int,vector<int>>>mp;
+    queue<pair<Node*,pair<int,int>>>q;
+    q.push({root,{0,0}});
+    
     while(q.size()){
-        auto curr = q.front();
+        auto temp = q.front();
         q.pop();
-        Node *node = curr.first;
-        int x = curr.second;
-        mp[x] = node->data;
+        Node *node = temp.first;
+        int x=temp.second.first; int y=temp.second.second;
+        mp[x][y].push_back(node->data);
+        
         if(node->left){
-            q.push({node->left,x-1});
+            q.push({node->left,{x-1,y+1}});
         }
         if(node->right){
-            q.push({node->right,x+1});
+            q.push({node->right,{x+1,y+1}});
         }
     }
+    
     vector<int>ans;
-    for(auto x:mp){
-        ans.push_back(x.second);
+    for(auto a:mp){
+        for(auto b:a.second){
+            for(int x:b.second){
+                ans.push_back(x);
+            }
+        }
     }
     
     return ans;
 }
+
 
 int main() {
     struct Node *root = new Node(10);
@@ -50,7 +57,7 @@ int main() {
     root->right->left = new Node(40);
     root->right->right = new Node(50);
     
-    vector<int>v = bottomView(root);
+    vector<int>v = verticalOrder(root);
 
     for(int x:v) cout<<x<<" ";
     cout<<endl;

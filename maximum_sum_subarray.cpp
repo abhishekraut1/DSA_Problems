@@ -18,7 +18,7 @@ using namespace std;
     // Kadane's Algorithm
     int maxSumSubarray2(vector<int>&arr){
         int max_ending_here=0;
-        int max_so_far=0;
+        int max_so_far=INT_MIN;
         int s=0,start=0,end=0;
         for(int i=0;i<arr.size();i++){
             // either extend the previous max_ending_here or start new one

@@ -17,7 +17,7 @@ struct Node{
     }
 };
 
-// TC = O(n)
+// TC = O(n) IMP
 bool help(Node* left,Node* right){
     if(left==NULL || right==NULL)
         return left==right;

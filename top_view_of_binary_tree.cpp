@@ -27,14 +27,14 @@ vector<int> topView(Node *root)
         auto curr = q.front();
         q.pop();
         Node *node = curr.first;
-        int level = curr.second;
-        if(mp.find(level) == mp.end())
-            mp[level]= node->data;
+        int x = curr.second;
+        if(mp.find(x) == mp.end())
+            mp[x]= node->data;
         if(node->left){
-            q.push({node->left,level-1});
+            q.push({node->left,x-1});
         }
         if(node->right){
-            q.push({node->right,level+1});
+            q.push({node->right,x+1});
         }
     }
     vector<int>ans;
